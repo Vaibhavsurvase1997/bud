@@ -1,0 +1,28 @@
+.footer__container {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #f4f8fa;
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.links h1 {
+    margin-left: 20px;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+}
+
+.menu__item {
+    margin-right: 15px;
+}
+.copy {
+    text-align: center;
+}

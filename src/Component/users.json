@@ -1,0 +1,137 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "fname": "Rohit",
+      "lname": "Swift",
+      "username": "Male",
+      "email": "Rohit",
+      "password": "Swift",
+      "cpassword": "Male"
+    },
+    {
+      "name": "vdgv",
+      "lastname": "cgsv",
+      "userName": "vaibh",
+      "email": "vaibhav@gmail.com",
+      "password": "vaibhav",
+      "confirmpassword": "vaibhav",
+      "id": 2
+    },
+    {
+      "name": "hbd",
+      "lastname": "jbdw",
+      "userName": "jdwb",
+      "email": "hello@1.com",
+      "password": "1234",
+      "confirmpassword": "1234",
+      "id": 3
+    },
+    {
+      "name": "hgjj",
+      "lastname": "khk",
+      "userName": "jj",
+      "email": "hi@2.com",
+      "password": "12345",
+      "confirmpassword": "12345",
+      "id": 4
+    },
+    {
+      "name": "hgjj",
+      "lastname": "khk",
+      "userName": "jj",
+      "email": "hi@2.com",
+      "password": "12345",
+      "confirmpassword": "12345",
+      "id": 5
+    },
+    {
+      "name": "Sumedh",
+      "lastname": "Bhalerao",
+      "userName": "sumedh@gmail.com",
+      "email": "sumedh@gmail.com",
+      "password": "sumedh",
+      "confirmpassword": "sumedh",
+      "id": 6
+    },
+    {
+      "name": "vishal",
+      "lastname": "vishal",
+      "userName": "vishal",
+      "email": "vishal@gmail.com",
+      "password": "vishal",
+      "confirmpassword": "vishal",
+      "id": 7
+    },
+    {
+      "name": "hbd",
+      "lastname": "hjbw",
+      "userName": "jwbd",
+      "email": "ab@gmail.com",
+      "password": "ab",
+      "confirmpassword": "ab",
+      "id": 8
+    },
+    {
+      "name": "vcg",
+      "lastname": "bv",
+      "userName": "bc",
+      "email": "vgs@gmail.com",
+      "password": "vgs",
+      "confirmpassword": "vgs",
+      "id": 9
+    },
+    {
+      "name": "bvd",
+      "lastname": "bvcxmnbvcndcd",
+      "userName": "  dbc",
+      "email": "vcbv@gmail.com",
+      "password": "nbdsvcn",
+      "confirmpassword": "nbvsdcnb",
+      "id": 10
+    },
+    {
+      "name": "VG",
+      "lastname": "cfs",
+      "userName": "vgs",
+      "email": "vgs@gmail.com",
+      "password": "VGS",
+      "confirmpassword": "VGS",
+      "id": 11
+    },
+    {
+      "name": "VG",
+      "lastname": "VH",
+      "userName": "vgs",
+      "email": "va@gmail.com",
+      "password": "Vaibh",
+      "confirmpassword": "Vaibh",
+      "id": 12
+    },
+    {
+      "name": "vs",
+      "lastname": "v",
+      "userName": "v",
+      "email": "v",
+      "password": "vwwv",
+      "confirmpassword": "g",
+      "id": 13
+    },
+    {
+      "fName": "vbd",
+      "lName": "bh",
+      "uName": "bhf",
+      "Email": "vgs@gmail.com",
+      "Pass": "Vaibhav@123",
+      "id": 14
+    },
+    {
+      "fName": "bv",
+      "lName": "d b",
+      "uName": "vgs",
+      "Email": "vgs@gmail.com",
+      "Pass": "Vaibhav@123",
+      "id": 15
+    }
+  ]
+}

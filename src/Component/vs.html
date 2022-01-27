@@ -1,0 +1,403 @@
+home...
+import React, { useState, useEffect } from "react";
+import ExpenseForm from "./ExpenseForm";
+import ExpenseList from "./ExpenseList";
+import Budget from "./Budget";
+import Header from "./Header";
+import Add from "./Add.css";
+function Home(){
+
+
+
+    return (
+      <>
+      <Header/>
+        <h1 style={{ color: "black" }}>BUDGET CALCULATOR</h1>
+        <div class="row">
+  <div class="column"  float= "left"
+  width= "25%"
+  padding= "0 10px">
+    <div class="card"></div>
+  </div>
+  <div class="column">
+    <div class="card">..</div>
+  </div>
+  <div class="column">
+    <div class="card">..</div>
+  </div>
+  <div class="column">
+    <div class="card">..</div>
+  </div>
+</div>
+      
+    </>
+  );
+}
+export default Home;
+
+
+signin..
+import React, { Component } from 'react';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+import { Redirect } from 'react-router';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
+import Headers from './Headers';
+import SocialLogin from './SocialLogin';
+// import GoogleLogin from 'react-google-login'
+import {
+    FormLabel,
+    FormControl,
+    InputGroup
+  } from "react-bootstrap";
+export class Signin extends Component {
+    responseGoogle=(response)=>{
+        console.log(response);
+        console.log(response.profileObj);
+    }
+    
+    constructor(props)
+{
+    super(props);
+    this.state={
+        details:[],
+        flag:0
+    }
+
+}
+componentDidMount(){
+    axios.get("http://localhost:3001/users").then((res)=>{
+        this.setState({
+             details:res.data,
+        })
+    })
+}
+validate(){
+    let i= 0;
+    let details=this.state.details;
+    while (i <= Object.keys(details).length) {
+        if (document.getElementById("email").value == '' || document.getElementById("password").value == '') {
+            alert("Please fill the fields");
+            break;
+        }
+
+        if ((document.getElementById("email").value == details[i].email) && (document.getElementById("password").value == details[i].password)) {
+            this.setState({flag:1})
+            // alert("Login Succcessfully");
+            document.getElementById("email").value = ''
+            document.getElementById("password").value = '';
+            break;
+        }
+        else {
+            console.log("no")
+            i++;
+            if (i == Object.keys(details).length) {
+                alert("Your Credientials Does not match please enter correct details");
+                break;
+            }
+        }
+    }
+  
+
+}
+
+
+render() {
+        return (
+            <>
+            
+            <div>
+                <Headers/>
+                 <Box
+                    component="form"
+                    sx={{
+                        '& > :not(style)': {
+                            my: '1.5rem',
+                            mx: '10rem',
+                            width: '100ch'
+                        }
+                    }}
+                    autoComplete="off"
+                >
+                <InputGroup className="mb-3">
+          <FormLabel name="email">Email ID = </FormLabel>
+          <FormControl name="email" id="email"  />
+        </InputGroup>
+        <InputGroup className="mb-3">
+          <FormLabel name="password">Password = </FormLabel>
+          <FormControl name="password" id="password"  />
+        </InputGroup>
+                    <Button className="mb-5" variant="contained" onClick={() => this.validate()}>LOG IN</Button>
+                    <SocialLogin/>
+                    <br/>
+                    <Link to="/signup">Register Here</Link>
+                </Box>
+                {console.log(this.state.details)}
+                {this.state.flag==1 && <Redirect to ="/home"/>}
+            </div>
+            
+            </>
+        )
+    }
+}
+
+export default Signin
+
+
+
+Headers..
+import React, { Component } from 'react'
+import header from "./header.css";
+
+export class Headers extends Component {
+    render() {
+        return (
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+             <h1>Welcome to Login Page</h1>
+</nav>
+            
+        )
+    }
+}
+
+export default Headers
+
+Header...
+
+import React, { Component } from 'react'
+import header from "./header.css";
+
+export class Header extends Component {
+    render() {
+        return (
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                <a class="navbar-brand" href="#">Welcome To Budget Planner</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" href="/signin">Logout</a>
+                    <a class="nav-link" href="#">Account</a>
+                </div>
+            </div>
+  </div>
+</nav>
+            
+        )
+    }
+}
+
+export default Header
+
+header.css
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@500&display=swap');
+
+.logo {
+    font-family: 'Noto Sans Mono', monospace;
+    text-transform: uppercase;
+    font-size: 45px;
+}
+
+
+Footer.js
+
+import React, { Component, Fragment } from 'react'
+import footer from "./footer.css";
+
+export class Footer extends Component {
+    render() {
+        return (
+            <Fragment>
+                 <div className="footer__container">
+                     <div className="links">
+                        
+                        <ul className="menu">
+                            <li className="menu__item"><a>Home</a></li>
+                            <li className="menu__item"><a>About us</a></li>
+                            <li className="menu__item"><a>Contact us</a></li>
+                        </ul>
+                    </div>
+                    <p className="copy">&copy Copyright reserved 2021.</p>
+                 </div>
+                 
+            </Fragment>
+           
+        )
+    }
+}
+
+export default Footer
+
+
+footer.css/
+
+.footer__container {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #f4f8fa;
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.links h1 {
+    margin-left: 20px;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+}
+
+.menu__item {
+    margin-right: 15px;
+}
+.copy {
+    text-align: center;
+}
+
+App.js...
+
+import React from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch
+} from 'react-router-dom';
+import Home from "./HomeBudget";
+import Signin from "./Signin";
+import Signup from "./Signup";
+import Header from "./Header";
+import Footer from './Footer';
+
+export default function Todo(props){
+  
+  return (
+    <Router>     
+    <div className="App">
+     <ul className="App-header">   
+     </ul>
+     <Switch>  
+       <Route exact path='/home' component={Home}></Route>
+       <Route exact path='/signup' component={Signup}></Route>
+       <Route exact path='/signin' component={Signin}></Route>
+    
+     </Switch>
+   </div>
+   <Footer/>
+</Router>
+  );
+}
+
+
+App.css...
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+   
+   }
+   .addItem {
+     color: black;
+     background: transparent; 
+     border-radius: 30px ;
+     transition: all .2s;
+   }
+   .addItem:hover {
+     color: white;
+     background: black;
+   }
+   .addItem:active {
+     transform: scale(0.98);
+   }
+   
+   .header-color {
+    text-transform: uppercase;
+    color:black;
+   }
+   
+   .todo-color {
+     background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+   }
+   .trigger:active {
+     transform: scale(0.98);
+   }
+   
+   .App-header {
+     
+     list-style: none;
+     background-color: grey;
+     display: flex;
+     justify-content: flex-start;
+     text-align: center;
+   }
+   
+   .link {
+     margin-right: 25px;
+   }
+   
+   form {
+     width: 80vw;
+   }
+   .signup__container {
+     margin-left: 200px;
+     width: 40vw;
+   }
+
+
+   Add.css......
+
+   * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  /* Float four columns side by side */
+  .column {
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+  }
+  
+  /* Remove extra left and right margins, due to padding in columns */
+  .row {margin: 0 -5px;}
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Style the counter cards */
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    padding: 16px;
+    height: 150px;
+    text-align: center;
+    background-color: #f1f1f1;
+  }
+  
+  /* Responsive columns - one column layout (vertical) on small screens */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }

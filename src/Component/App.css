@@ -1,0 +1,52 @@
+*{
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+
+}
+.addItem {
+  color: black;
+  background: transparent; 
+  border-radius: 30px ;
+  transition: all .2s;
+}
+.addItem:hover {
+  color: white;
+  background: black;
+}
+.addItem:active {
+  transform: scale(0.98);
+}
+
+.header-color {
+ text-transform: uppercase;
+ color:black;
+}
+
+.todo-color {
+  background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+}
+.trigger:active {
+  transform: scale(0.98);
+}
+
+.App-header {
+  
+  list-style: none;
+  background-color: grey;
+  display: flex;
+  justify-content: flex-start;
+  text-align: center;
+}
+
+.link {
+  margin-right: 25px;
+}
+
+form {
+  width: 80vw;
+}
+.signup__container {
+  margin-left: 200px;
+  width: 40vw;
+}
